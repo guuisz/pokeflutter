@@ -1,0 +1,83 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run -t lib/main.dart
+
+## exception
+
+ExistingDartDevelopmentServiceException: DartDevelopmentServiceException: JSON-RPC error 100: Feature is disabled. data: Existing VM service clients prevent DDS from taking control.
+
+```
+#0      DartDevelopmentServiceImpl._startDDSServer (package:dds/src/dds_impl.dart:225:7)
+<asynchronous suspension>
+#1      DartDevelopmentServiceImpl.startService (package:dds/src/dds_impl.dart:117:7)
+<asynchronous suspension>
+#2      DartDevelopmentService.startDartDevelopmentService (package:dds/dds.dart:97:5)
+<asynchronous suspension>
+#3      DebugService.startDartDevelopmentService (package:dwds/src/services/debug_service.dart:165:12)
+<asynchronous suspension>
+#4      DevHandler._createAppDebugServices (package:dwds/src/handlers/dev_handler.dart:514:7)
+<asynchronous suspension>
+#5      DevHandler.loadAppServices (package:dwds/src/handlers/dev_handler.dart:239:21)
+<asynchronous suspension>
+#6      Dwds.debugConnection (package:dwds/dart_web_debug_service.dart:59:30)
+<asynchronous suspension>
+#7      WebDevFS.connect.<anonymous closure> (package:flutter_tools/src/isolated/devfs_web.dart:715:15)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[32m[✓][39m Flutter (Channel stable, 3.10.2, on Microsoft Windows [versão 10.0.22621.3007], locale pt-BR)
+    [32m•[39m Flutter version 3.10.2 on channel stable at C:\src\flutter
+    [32m•[39m Upstream repository https://github.com/flutter/flutter.git
+    [32m•[39m Framework revision 9cd3d0d9ff (9 months ago), 2023-05-23 20:57:28 -0700
+    [32m•[39m Engine revision 90fa3ae28f
+    [32m•[39m Dart version 3.0.2
+    [32m•[39m DevTools version 2.23.1
+
+[32m[✓][39m Windows Version (Installed version of Windows is version 10 or higher)
+
+[33m[!][39m Android toolchain - develop for Android devices (Android SDK version 34.0.0)
+    [32m•[39m Android SDK at C:\Users\guica\AppData\Local\Android\sdk
+    [31m✗[39m cmdline-tools component is missing
+      Run `path/to/sdkmanager --install "cmdline-tools;latest"`
+      See https://developer.android.com/studio/command-line for more details.
+    [31m✗[39m Android license status unknown.
+      Run `flutter doctor --android-licenses` to accept the SDK licenses.
+      See https://flutter.dev/docs/get-started/install/windows#android-setup for more details.
+
+[32m[✓][39m Chrome - develop for the web
+    [32m•[39m Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[33m[!][39m Visual Studio - develop for Windows (Ferramentas de Build do Visual Studio 2019 16.11.26)
+    [32m•[39m Visual Studio at C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools
+    [32m•[39m Ferramentas de Build do Visual Studio 2019 version 16.11.33529.622
+    [32m•[39m Windows 10 SDK version 10.0.19041.0
+    [31m✗[39m The current Visual Studio installation is incomplete. Please reinstall Visual Studio.
+
+[32m[✓][39m Android Studio (version 2022.2)
+    [32m•[39m Android Studio at C:\Program Files\Android\Android Studio
+    [32m•[39m Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    [32m•[39m Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    [32m•[39m Java version OpenJDK Runtime Environment (build 17.0.6+0-b2043.56-9586694)
+
+[32m[✓][39m VS Code (version 1.85.2)
+    [32m•[39m VS Code at C:\Users\guica\AppData\Local\Programs\Microsoft VS Code
+    [32m•[39m Flutter extension version 3.82.0
+
+[32m[✓][39m Connected device (3 available)
+    [32m•[39m Windows (desktop) • windows • windows-x64    • Microsoft Windows [versão 10.0.22621.3007]
+    [32m•[39m Chrome (web)      • chrome  • web-javascript • Google Chrome 121.0.6167.184
+    [32m•[39m Edge (web)        • edge    • web-javascript • Microsoft Edge 121.0.2277.112
+
+[32m[✓][39m Network resources
+    [32m•[39m All expected network resources are available.
+
+[33m![39m Doctor found issues in 2 categories.
+```
